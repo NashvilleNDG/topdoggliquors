@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="description" content="Alcohol delivery in Clarksville, TN through DoorDash & Uber Eats. Get premium wine, spirits & craft beer delivered to your door. Fast 30-60 min delivery. Order now!">
+  <meta name="keywords" content="alcohol delivery Clarksville, liquor delivery Clarksville TN, DoorDash alcohol, Uber Eats liquor, wine delivery, beer delivery, spirit delivery">
+  <title>Alcohol Delivery Clarksville TN | DoorDash & Uber Eats | Top Dogg Liquors</title>
+  
+  <!-- LocalBusiness Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LiquorStore",
+    "name": "Top Dogg Liquors",
+    "image": "https://topdoggliquors.com/images/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2896 Wilma Rudolph Blvd",
+      "addressLocality": "Clarksville",
+      "addressRegion": "TN",
+      "postalCode": "37040",
+      "addressCountry": "US"
+    },
+    "url": "https://topdoggliquors.com/delivery.html",
+    "telephone": "(931) 378-7061",
+    "email": "topdoggliquors@gmail.com",
+    "priceRange": "$$"
+  }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://topdoggliquors.com/delivery.html">
+  <meta property="og:title" content="Alcohol Delivery Clarksville TN | DoorDash & Uber Eats | Top Dogg Liquors">
+  <meta property="og:description" content="Get premium wine, spirits & craft beer delivered to your door in Clarksville, TN. Fast 30-60 min delivery through DoorDash & Uber Eats.">
+  <meta property="og:image" content="https://topdoggliquors.com/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alcohol Delivery Clarksville TN | Top Dogg Liquors">
+  <meta name="twitter:description" content="Get premium wine, spirits & craft beer delivered to your door in Clarksville, TN through DoorDash & Uber Eats.">
+  <meta name="twitter:image" content="https://topdoggliquors.com/images/twitter-image.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://topdoggliquors.com/delivery.html">
+  
+  <style>
+    /* Delivery Page Specific Styles */
+    .delivery-hero {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1a2c48 100%);
+      padding: 120px 0 80px;
+      text-align: center;
+      color: white;
+    }
+    
+    .delivery-hero h1 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .delivery-hero p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .delivery-platforms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+    
+    .platform-card {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    
+    .platform-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .platform-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .platform-icon.doordash {
+      color: #FF3008;
+    }
+    
+    .platform-icon.ubereats {
+      color: #06C167;
+    }
+    
+    .platform-logo {
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80px;
+    }
+    
+    .platform-logo img {
+      max-width: 200px;
+      height: auto;
+      object-fit: contain;
+    }
+    
+    .platform-card h3 {
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+    }
+    
+    .platform-card p {
+      color: var(--text-medium);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .platform-features {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+    
+    .platform-features li {
+      padding: 0.5rem 0;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .platform-features li::before {
+      content: "✓";
+      color: var(--primary-gold);
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+    
+    .btn-delivery {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--gradient-gold);
+      color: var(--primary-navy);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: var(--transition-normal);
+      margin-top: 1rem;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-delivery:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-delivery.doordash {
+      background: #FF3008;
+      color: white;
+    }
+    
+    .btn-delivery.ubereats {
+      background: #06C167;
+      color: white;
+    }
+    
+    .delivery-benefits {
+      background: var(--cream);
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .benefit-item {
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .benefit-icon {
+      font-size: 3rem;
+      color: var(--primary-gold);
+      margin-bottom: 1rem;
+    }
+    
+    .benefit-item h3 {
+      color: var(--primary-navy);
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+    }
+    
+    .benefit-item p {
+      color: var(--text-medium);
+    }
+    
+    .how-it-works {
+      background: white;
+    }
+    
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .step-card {
+      background: var(--off-white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+      border-top: 4px solid var(--primary-gold);
+    }
+    
+    .step-number {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background: var(--gradient-gold);
+      color: var(--primary-navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .step-card h3 {
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .step-card p {
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+    
+    .important-info {
+      background: var(--cream);
+    }
+    
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .info-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-gold);
+    }
+    
+    .info-card h3 {
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .info-card h3 i {
+      color: var(--primary-gold);
+    }
+    
+    .info-card p {
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+    
+    @media (max-width: 768px) {
+      .delivery-hero {
+        padding: 100px 0 60px;
+      }
+      
+      .delivery-platforms {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .platform-card {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- ============================================
+       AGE VERIFICATION POPUP
+       ============================================ -->
+  <div class="age-verification-overlay">
+    <div class="age-verification-modal">
+      <div class="age-icon">
+        <img src="images/logo.png" alt="Top Dogg Liquors" style="max-width: 120px; height: auto;">
+      </div>
+      <h2>Welcome Top Dogg Liquors</h2>
+      <p>How old are you?</p>
+      <div class="age-buttons">
+        <button class="btn-enter">I am 21 or older</button>
+        <button class="btn-exit">I am under 21</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       NAVIGATION - STICKY HEADER
+       ============================================ -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Top Dogg Liquors - Premium Liquor Store Clarksville TN" class="logo-image">
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a href="liquor-collections.html" class="dropdown-link">Collections</a>
+            <button class="dropdown-toggle" aria-label="Toggle Collections menu" type="button">
+              <span class="dropdown-arrow">▼</span>
+            </button>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="spirit-shop-clarksville.html">Spirits</a></li>
+            <li><a href="wine-shop-clarksville.html">Wine</a></li>
+            <li><a href="beer-shop-clarksville.html">Beer</a></li>
+          </ul>
+        </li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="delivery.html">Delivery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      
+      <div class="nav-cta">
+        <a href="delivery.html" class="btn-order-now">Order Now</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="delivery-hero">
+    <div class="container">
+      <h1 class="fade-in-on-scroll">Order Online for Delivery</h1>
+      <p class="fade-in-on-scroll">Get your favorite wines, spirits, and beers delivered right to your door in Clarksville, TN. Order through DoorDash or Uber Eats today!</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       DELIVERY PLATFORMS
+       ============================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in-on-scroll">
+        <div class="section-decoration"></div>
+        <h2 class="section-title">Choose Your Delivery Partner</h2>
+        <p class="section-subtitle">Fast, reliable alcohol delivery to your door in Clarksville</p>
+      </div>
+      
+      <div class="delivery-platforms">
+        <!-- DoorDash Card -->
+        <div class="platform-card fade-in-on-scroll">
+          <div class="platform-logo">
+            <img src="images/Doordash-logo.svg" alt="DoorDash Logo" style="max-width: 200px; height: auto;">
+          </div>
+          <h3>Order on DoorDash</h3>
+          <p>Fast delivery from your favorite liquor store in Clarksville. Track your order in real-time.</p>
+          <ul class="platform-features">
+            <li>30-60 minute delivery</li>
+            <li>Real-time order tracking</li>
+            <li>DashPass benefits available</li>
+            <li>Contactless delivery option</li>
+          </ul>
+          <a href="https://www.doordash.com/convenience/store/top-dogg-liquors-clarksville-25897827/" target="_blank" rel="noopener noreferrer" class="btn-delivery doordash">Order on DoorDash</a>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">or open the DoorDash app</p>
+        </div>
+        
+        <!-- Uber Eats Card -->
+        <div class="platform-card fade-in-on-scroll">
+          <div class="platform-logo">
+            <img src="images/Uber-eats-logo.svg" alt="Uber Eats Logo" style="max-width: 200px; height: auto;">
+          </div>
+          <h3>Order on Uber Eats</h3>
+          <p>Reliable alcohol delivery service to Clarksville homes with live order tracking.</p>
+          <ul class="platform-features">
+            <li>Quick 30-60 minute delivery</li>
+            <li>Live order tracking</li>
+            <li>Uber One member perks</li>
+            <li>Safe contactless delivery</li>
+          </ul>
+          <a href="https://www.ubereats.com/store/top-dogg-liquors/AK7gbicdV9ex56Ny5d6LTA" target="_blank" rel="noopener noreferrer" class="btn-delivery ubereats">Order on Uber Eats</a>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">or open the Uber Eats app</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHY ORDER DELIVERY
+       ============================================ -->
+  <section class="section delivery-benefits">
+    <div class="container">
+      <div class="section-header fade-in-on-scroll">
+        <div class="section-decoration"></div>
+        <h2 class="section-title">Why Order Alcohol Delivery?</h2>
+        <p class="section-subtitle">Convenience meets quality with our delivery service</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-item fade-in-on-scroll">
+          <div class="benefit-icon">
+            <i class="fas fa-shipping-fast"></i>
+          </div>
+          <h3>Fast & Reliable</h3>
+          <p>Get your order delivered within 30-60 minutes through our trusted delivery partners</p>
+        </div>
+        
+        <div class="benefit-item fade-in-on-scroll">
+          <div class="benefit-icon">
+            <i class="fas fa-wine-bottle"></i>
+          </div>
+          <h3>Wide Selection</h3>
+          <p>Access our complete inventory of wines, spirits, and craft beers from your phone</p>
+        </div>
+        
+        <div class="benefit-item fade-in-on-scroll">
+          <div class="benefit-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Safe Delivery</h3>
+          <p>Contactless delivery options available with proper ID verification at your door</p>
+        </div>
+        
+        <div class="benefit-item fade-in-on-scroll">
+          <div class="benefit-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Easy Ordering</h3>
+          <p>Browse, select, and checkout in minutes through DoorDash or Uber Eats app</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       HOW IT WORKS
+       ============================================ -->
+  <section class="section how-it-works">
+    <div class="container">
+      <div class="section-header fade-in-on-scroll">
+        <div class="section-decoration"></div>
+        <h2 class="section-title">How Alcohol Delivery Works</h2>
+        <p class="section-subtitle">Simple, fast, and secure ordering process</p>
+      </div>
+      
+      <div class="steps-container">
+        <div class="step-card fade-in-on-scroll">
+          <div class="step-number">1</div>
+          <h3>Browse & Select</h3>
+          <p>Open DoorDash or Uber Eats, search for Top Dogg Liquors, and browse our full selection of premium wines, spirits, and craft beers.</p>
+        </div>
+        
+        <div class="step-card fade-in-on-scroll">
+          <div class="step-number">2</div>
+          <h3>Place Your Order</h3>
+          <p>Add items to your cart, choose your delivery address in Clarksville, and complete your secure checkout with your preferred payment method.</p>
+        </div>
+        
+        <div class="step-card fade-in-on-scroll">
+          <div class="step-number">3</div>
+          <h3>Receive Delivery</h3>
+          <p>Track your order in real-time and receive it at your door. Valid ID required upon delivery (must be 21 years or older).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       IMPORTANT INFORMATION
+       ============================================ -->
+  <section class="section important-info">
+    <div class="container">
+      <div class="section-header fade-in-on-scroll">
+        <div class="section-decoration"></div>
+        <h2 class="section-title">Important Delivery Information</h2>
+        <p class="section-subtitle">Everything you need to know before ordering</p>
+      </div>
+      
+      <div class="info-grid">
+        <div class="info-card fade-in-on-scroll">
+          <h3><i class="fas fa-id-card"></i> Age Verification Required</h3>
+          <p>All orders require valid ID showing you are 21 years or older. Our delivery partners will verify your age upon delivery.</p>
+        </div>
+        
+        <div class="info-card fade-in-on-scroll">
+          <h3><i class="fas fa-clock"></i> Delivery Hours</h3>
+          <p>Alcohol delivery is available during our store operating hours: Mon-Thu 9AM-9:50PM, Fri-Sat 9AM-10:50PM, Sun 10AM-9:50PM.</p>
+        </div>
+        
+        <div class="info-card fade-in-on-scroll">
+          <h3><i class="fas fa-map-marker-alt"></i> Delivery Area</h3>
+          <p>We deliver throughout Clarksville, TN and surrounding areas. Check your delivery app for specific availability in your location.</p>
+        </div>
+        
+        <div class="info-card fade-in-on-scroll">
+          <h3><i class="fas fa-hand-holding-heart"></i> Contactless Delivery</h3>
+          <p>Request contactless delivery in your order notes for a safer, no-contact experience. ID verification still required at a safe distance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       STORE INFORMATION
+       ============================================ -->
+  <section class="section" style="background: white;">
+    <div class="container">
+      <div class="section-header fade-in-on-scroll">
+        <div class="section-decoration"></div>
+        <h2 class="section-title">Top Dogg Liquors - Best Liquor Store in Clarksville, TN</h2>
+      </div>
+      
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <div class="fade-in-on-scroll" style="margin-bottom: 2rem;">
+          <p style="font-size: 1.125rem; color: var(--text-medium); line-height: 1.8;">
+            Clarksville's premier destination for premium wines, spirits, and craft beers. We offer exceptional selection, expert recommendations, and now convenient delivery service through DoorDash and Uber Eats.
+          </p>
+        </div>
+        
+        <div class="fade-in-on-scroll" style="background: var(--cream); padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left;">
+            <div>
+              <h3 style="color: var(--primary-navy); margin-bottom: 1rem; font-size: 1.25rem;">
+                <i class="fas fa-map-marker-alt" style="color: var(--primary-gold); margin-right: 0.5rem;"></i>
+                Address
+              </h3>
+              <p style="color: var(--text-dark);">
+                2896 Wilma Rudolph Blvd<br>
+                Clarksville, TN 37040
+              </p>
+            </div>
+            
+            <div>
+              <h3 style="color: var(--primary-navy); margin-bottom: 1rem; font-size: 1.25rem;">
+                <i class="fas fa-phone" style="color: var(--primary-gold); margin-right: 0.5rem;"></i>
+                Contact
+              </h3>
+              <p style="color: var(--text-dark);">
+                Phone: <a href="tel:9313787061" style="color: var(--primary-gold); text-decoration: none;">(931) 378-7061</a><br>
+                Email: <a href="mailto:topdoggliquors@gmail.com" style="color: var(--primary-gold); text-decoration: none;">topdoggliquors@gmail.com</a>
+              </p>
+            </div>
+            
+            <div>
+              <h3 style="color: var(--primary-navy); margin-bottom: 1rem; font-size: 1.25rem;">
+                <i class="fas fa-clock" style="color: var(--primary-gold); margin-right: 0.5rem;"></i>
+                Store Hours
+              </h3>
+              <p style="color: var(--text-dark); font-size: 0.95rem;">
+                Mon-Thu: 9:00 AM - 9:50 PM<br>
+                Fri-Sat: 9:00 AM - 10:50 PM<br>
+                Sun: 10:00 AM - 9:50 PM
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fade-in-on-scroll" style="margin-top: 3rem;">
+          <a href="contact.html" class="btn-primary" style="margin-right: 1rem;">Visit Our Store</a>
+          <a href="tel:9313787061" class="btn-secondary">Call Us Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Top Dogg Liquors has been serving the Clarksville community with premium spirits, fine wines, and craft beers. Located conveniently with free parking and now offering delivery!</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="delivery.html">Delivery</a></li>
+            <li><a href="liquor-collections.html">Collections</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="spirit-shop-clarksville.html">Spirits</a></li>
+            <li><a href="wine-shop-clarksville.html">Wine</a></li>
+            <li><a href="beer-shop-clarksville.html">Beer & Cider</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Store Hours</h3>
+          <ul class="footer-hours">
+            <li><span>Monday - Thursday</span><span>9 AM - 9:50 PM</span></li>
+            <li><span>Friday - Saturday</span><span>9 AM - 10:50 PM</span></li>
+            <li><span>Sunday</span><span>10 AM - 9:50 PM</span></li>
+          </ul>
+          <div class="footer-social-icons" style="margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="https://www.instagram.com/topdoggliquors/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: 50%; color: white; font-size: 1.2rem; transition: transform 0.3s ease; text-decoration: none;">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/61550932675516/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #1877F2; border-radius: 50%; color: white; font-size: 1.2rem; transition: transform 0.3s ease; text-decoration: none;">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.youtube.com/@TopDoggLiquors" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #FF0000; border-radius: 50%; color: white; font-size: 1.2rem; transition: transform 0.3s ease; text-decoration: none;">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.tiktok.com/@topdoggliquors" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #000000; border-radius: 50%; color: white; font-size: 1.2rem; transition: transform 0.3s ease; text-decoration: none;">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.pinterest.com/topdoggliquors" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #BD081C; border-radius: 50%; color: white; font-size: 1.2rem; transition: transform 0.3s ease; text-decoration: none;">
+              <i class="fab fa-pinterest"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><strong>Address:</strong><br>2896 Wilma Rudolph Blvd<br>Clarksville, TN 37040</p>
+          <p><strong>Phone:</strong><br><a href="tel:9313787061">(931) 378-7061</a></p>
+          <p><strong>Email:</strong><br><a href="mailto:topdoggliquors@gmail.com">topdoggliquors@gmail.com</a></p>
+        </div>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Top Dogg Liquors. All rights reserved. Design & Developed By <a href="https://nashvilledigitalgroup.com/" target="_blank" rel="noopener noreferrer" class="ndg-link">Nashville Digital Group</a></p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem;">Must be 21 or older to purchase. Please drink responsibly.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       BACK TO TOP BUTTON
+       ============================================ -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- ============================================
+       JAVASCRIPT FILES
+       ============================================ -->
+  <script src="js/age-verification.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
