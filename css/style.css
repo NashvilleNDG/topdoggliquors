@@ -1152,6 +1152,16 @@ a {
 .age-icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-md);
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.age-icon img {
+  display: block;
+  filter: brightness(1.1);
 }
 
 .age-verification-modal h2 {
