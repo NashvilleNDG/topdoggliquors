@@ -72,22 +72,59 @@
   <style>
     /* Delivery Page Specific Styles */
     .delivery-hero {
-      background: linear-gradient(135deg, var(--primary-navy) 0%, #1a2c48 100%);
-      padding: 120px 0 80px;
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       color: white;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    
+    .delivery-hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/Hero-image.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+    
+    .delivery-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.85) 100%);
+      z-index: 2;
+    }
+    
+    .delivery-hero .container {
+      position: relative;
+      z-index: 3;
     }
     
     .delivery-hero h1 {
       color: white;
       margin-bottom: 1rem;
+      font-size: 3rem;
+      font-family: var(--font-display);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     
     .delivery-hero p {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.95);
       font-size: 1.25rem;
       max-width: 700px;
       margin: 0 auto;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
     }
     
     .delivery-platforms {
@@ -319,6 +356,15 @@
     @media (max-width: 768px) {
       .delivery-hero {
         padding: 100px 0 60px;
+        min-height: 400px;
+      }
+      
+      .delivery-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .delivery-hero p {
+        font-size: 1.1rem;
       }
       
       .delivery-platforms {
@@ -396,6 +442,8 @@
        HERO SECTION
        ============================================ -->
   <section class="delivery-hero">
+    <div class="delivery-hero-background"></div>
+    <div class="delivery-hero-overlay"></div>
     <div class="container">
       <h1 class="fade-in-on-scroll">Order Online for Delivery</h1>
       <p class="fade-in-on-scroll">Get your favorite wines, spirits, and beers delivered right to your door in Clarksville, TN. Order through DoorDash or Uber Eats today!</p>
