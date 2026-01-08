@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KQSV7HSF');</script>
-  <!-- End Google Tag Manager -->
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B98WVWXTFD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-B98WVWXTFD');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -130,13 +114,18 @@
   }
   </script>
   
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Preload Critical CSS -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="css/responsive.css" as="style">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+  
+  <!-- Font Awesome (Deferred for performance) -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -166,7 +155,7 @@
   <div class="age-verification-overlay">
     <div class="age-verification-modal">
       <div class="age-icon">
-        <img src="images/logo.png" alt="Top Dogg Liquors" style="max-width: 120px; height: auto;">
+        <img src="images/logo.png" alt="Top Dogg Liquors" style="max-width: 120px; height: auto;" width="120" height="120">
       </div>
       <h2>Welcome Top Dogg Liquors</h2>
       <p>How old are you?</p>
@@ -183,7 +172,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="Top Dogg Liquors - Premium Liquor Store Clarksville TN" class="logo-image">
+        <img src="images/logo.png" alt="Top Dogg Liquors - Premium Liquor Store Clarksville TN" class="logo-image" width="150" height="150">
       </a>
       
       <ul class="nav-menu">
@@ -814,9 +803,27 @@
   <!-- ============================================
        JAVASCRIPT FILES
        ============================================ -->
-  <script src="js/age-verification.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/age-verification.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+  
+  <!-- Google Tag Manager (Moved to bottom for performance) -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KQSV7HSF');
+  </script>
+  
+  <!-- Google Analytics (Moved to bottom for performance) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B98WVWXTFD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B98WVWXTFD');
+  </script>
 </body>
 </html>
 
