@@ -8,7 +8,7 @@
    ============================================ */
 :root {
   /* Primary Colors */
-  --primary-navy: #0A1628;
+  --primary-navy: #000000;
   --primary-gold: #D4AF37;
   --primary-burgundy: #800020;
   
@@ -24,19 +24,19 @@
   
   /* Accent & Effects */
   --gold-accent: #C9A961;
-  --shadow-soft: rgba(10, 22, 40, 0.08);
-  --shadow-medium: rgba(10, 22, 40, 0.15);
-  --overlay-dark: rgba(10, 22, 40, 0.6);
+  --shadow-soft: rgba(0, 0, 0, 0.08);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --overlay-dark: rgba(0, 0, 0, 0.6);
   
   /* Gradients */
   --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #C9A961 100%);
-  --gradient-navy: linear-gradient(180deg, #0A1628 0%, #1a2c48 100%);
+  --gradient-navy: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
   
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06);
-  --shadow-md: 0 4px 16px rgba(10, 22, 40, 0.1);
-  --shadow-lg: 0 8px 32px rgba(10, 22, 40, 0.15);
-  --shadow-xl: 0 16px 48px rgba(10, 22, 40, 0.2);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
   
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -1003,7 +1003,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(10, 22, 40, 0.3) 100%);
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -1042,7 +1042,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(10, 22, 40, 0.75) 0%, rgba(10, 22, 40, 0.55) 50%, rgba(10, 22, 40, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.85) 100%);
   z-index: 2;
 }
 
@@ -1125,7 +1125,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 22, 40, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
   z-index: 10000;
   display: flex;
@@ -1272,7 +1272,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 22, 40, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1391,7 +1391,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(10, 22, 40, 0.9), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
   padding: var(--spacing-lg);
   color: white;
 }
