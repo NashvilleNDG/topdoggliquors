@@ -15,7 +15,7 @@
   }
   
   .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: 2.5rem;
   }
   
   .product-grid {
@@ -543,7 +543,7 @@
   }
   
   .hero-title {
-    font-size: 5.5rem;
+    font-size: 3rem;
   }
   
   .section {
