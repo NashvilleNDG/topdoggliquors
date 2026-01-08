@@ -296,8 +296,26 @@
         <h2 class="section-title">Send Us a Message</h2>
       </div>
       
+      <!-- Success Message (Hidden by default) -->
+      <div id="success-message" style="max-width: 800px; margin: 2rem auto; padding: 1.5rem; background: #10b981; color: white; border-radius: 8px; text-align: center; display: none; box-shadow: var(--shadow-md);">
+        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">✅ Message Sent Successfully!</h3>
+        <p style="margin: 0; font-size: 1rem;">Thank you for contacting us. We'll get back to you shortly!</p>
+      </div>
+      
       <div style="max-width: 800px; margin: 3rem auto 0;">
-        <form class="contact-form fade-in-on-scroll" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow-md);">
+        <form 
+          action="https://formsubmit.co/topdoggliquors@gmail.com" 
+          method="POST" 
+          class="contact-form fade-in-on-scroll" 
+          style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow-md);">
+          
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission - Top Dogg Liquors">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://topdoggliquors.com/contact.html?success=true">
+          <input type="hidden" name="_cc" value="nashvillendg@gmail.com">
+          
           <div style="margin-bottom: 1.5rem;">
             <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary-navy);">Name *</label>
             <input 
@@ -338,7 +356,7 @@
             <input 
               type="text" 
               id="subject" 
-              name="subject" 
+              name="_subject" 
               required
               class="newsletter-input"
               style="width: 100%;"
@@ -495,5 +513,24 @@
   <script src="js/age-verification.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
+  
+  <!-- FormSubmit Success Message Handler -->
+  <script>
+    // Check if form was successfully submitted
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      const successMessage = document.getElementById('success-message');
+      if (successMessage) {
+        successMessage.style.display = 'block';
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Remove success parameter from URL after 3 seconds
+        setTimeout(() => {
+          const newUrl = window.location.pathname;
+          window.history.replaceState({}, document.title, newUrl);
+        }, 3000);
+      }
+    }
+  </script>
 </body>
 </html>

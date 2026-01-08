@@ -341,15 +341,16 @@
   // FORM VALIDATION
   // ============================================
   function initFormValidation() {
-    const forms = document.querySelectorAll('form');
+    // Only handle newsletter forms - Contact form uses FormSubmit
+    const newsletterForms = document.querySelectorAll('.newsletter-form');
     const recipientEmails = 'topdoggliquors@gmail.com,nashvillendg@gmail.com';
     
-    forms.forEach(form => {
+    newsletterForms.forEach(form => {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         
         // Basic validation
-        const inputs = form.querySelectorAll('input[required], textarea[required]');
+        const inputs = form.querySelectorAll('input[required]');
         let isValid = true;
         
         inputs.forEach(input => {
@@ -372,49 +373,14 @@
         });
         
         if (isValid) {
-          // Check if it's a newsletter form or contact form
-          const isNewsletterForm = form.classList.contains('newsletter-form');
-          const isContactForm = form.classList.contains('contact-form');
-          
-          if (isNewsletterForm) {
-            // Newsletter subscription
-            const emailInput = form.querySelector('input[type="email"]');
-            const email = emailInput ? emailInput.value : '';
-            const subject = encodeURIComponent('Newsletter Subscription');
-            const body = encodeURIComponent(`New newsletter subscription:\n\nEmail: ${email}`);
-            const mailtoLink = `mailto:${recipientEmails}?subject=${subject}&body=${body}`;
-            window.location.href = mailtoLink;
-            // Show success message (consider using a toast notification instead)
-            console.log('Newsletter subscription successful');
-          } else if (isContactForm) {
-            // Contact form
-            const nameInput = form.querySelector('#name') || form.querySelector('input[name="name"]');
-            const emailInput = form.querySelector('#email') || form.querySelector('input[name="email"]');
-            const phoneInput = form.querySelector('#phone') || form.querySelector('input[name="phone"]');
-            const subjectInput = form.querySelector('#subject') || form.querySelector('input[name="subject"]');
-            const messageInput = form.querySelector('#message') || form.querySelector('textarea[name="message"]');
-            
-            const name = nameInput ? nameInput.value : '';
-            const email = emailInput ? emailInput.value : '';
-            const phone = phoneInput ? phoneInput.value : '';
-            const subject = subjectInput ? subjectInput.value : 'Contact Form Submission';
-            const message = messageInput ? messageInput.value : '';
-            
-            const emailBody = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${message}`;
-            const encodedSubject = encodeURIComponent(subject);
-            const encodedBody = encodeURIComponent(emailBody);
-            const mailtoLink = `mailto:${recipientEmails}?subject=${encodedSubject}&body=${encodedBody}`;
-            window.location.href = mailtoLink;
-            // Show success message
-            console.log('Contact form submitted successfully');
-          } else {
-            // Generic form
-            alert('Thank you! Your message has been sent.');
-          }
-          
+          // Newsletter subscription
+          const emailInput = form.querySelector('input[type="email"]');
+          const email = emailInput ? emailInput.value : '';
+          const subject = encodeURIComponent('Newsletter Subscription');
+          const body = encodeURIComponent(`New newsletter subscription:\n\nEmail: ${email}`);
+          const mailtoLink = `mailto:${recipientEmails}?subject=${subject}&body=${body}`;
+          window.location.href = mailtoLink;
           form.reset();
-        } else {
-          // Show validation error message
         }
       });
     });
