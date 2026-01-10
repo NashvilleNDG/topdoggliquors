@@ -167,68 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // ============================================
-  // LAZY LOADING FOR IMAGES
-  // ============================================
-  const lazyImages = document.querySelectorAll('img[data-src]');
-  
-  if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.removeAttribute('data-src');
-          imageObserver.unobserve(img);
-        }
-      });
-    });
-    
-    lazyImages.forEach(img => imageObserver.observe(img));
-  } else {
-    // Fallback for older browsers
-    lazyImages.forEach(img => {
-      img.src = img.dataset.src;
-    });
-  }
-  
-  // ============================================
-  // FORM VALIDATION (if any forms are added)
-  // ============================================
-  const forms = document.querySelectorAll('form');
-  
-  forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const inputs = form.querySelectorAll('input[required], textarea[required]');
-      let isValid = true;
-      
-      inputs.forEach(input => {
-        if (!input.value.trim()) {
-          isValid = false;
-          input.classList.add('error');
-        } else {
-          input.classList.remove('error');
-        }
-        
-        // Email validation
-        if (input.type === 'email' && input.value) {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(input.value)) {
-            isValid = false;
-            input.classList.add('error');
-          }
-        }
-      });
-      
-      if (isValid) {
-        // Form is valid, you can submit it here
-        // Form is valid - process submission
-      }
-    });
-  });
-  
-  // ============================================
   // INITIALIZE ANIMATIONS ON LOAD
   // ============================================
   window.addEventListener('load', () => {
