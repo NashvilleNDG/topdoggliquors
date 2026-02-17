@@ -1025,15 +1025,10 @@ a {
 }
 
 /* Homepage hero uses img for LCP - no duplicate background */
-.hero-background:has(.hero-bg-img) {
+.hero-background:has(img) {
   background-image: none;
-  animation: none;
-  filter: none;
-  opacity: 1;
-}
-.hero-background .hero-bg-img {
-  animation: heroFadeIn 1.5s ease-out;
-  filter: brightness(0.85) contrast(1.1);
+  background-size: auto;
+  background-position: unset;
 }
 
 @keyframes heroFadeIn {
