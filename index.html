@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- LCP: preload hero image first so browser prioritizes it -->
+  <link rel="preload" href="images/hero-image.webp" as="image" fetchpriority="high">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="description" content="Visit Top Dogg Liquors in Clarksville, TN for premium spirits, fine wines & craft beers. Free parking. Expert staff. Open daily. Call (931) 378-7061!">
   <meta name="keywords" content="liquor store Clarksville, wine shop Clarksville TN, spirits Tennessee, craft beer, premium liquor">
@@ -114,15 +116,23 @@
   }
   </script>
   
-  <!-- Preload LCP Image with Highest Priority -->
-  <link rel="preload" href="images/hero-image.webp" as="image" fetchpriority="high">
+  <!-- Preconnect to critical origins (faster LCP & font load) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Fonts (async, non-render-blocking) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600;700&family=Cinzel:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600;700&family=Cinzel:wght@400;600;700&display=swap"></noscript>
   
   <!-- Critical Inline CSS for Instant Render -->
   <style>
-    /* Critical above-the-fold styles - inlined for instant render */
+    /* Critical above-the-fold styles - inlined for instant render. Hero uses img for LCP. */
     body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;overflow-x:hidden}
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#000;overflow:hidden}
-    .hero-background{position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('images/hero-image.webp');background-size:cover;background-position:center;opacity:.6;z-index:1}
+    .hero-background{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
+    .hero-bg-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.6;z-index:0;display:block}
     .hero-content{position:relative;z-index:3;text-align:center;color:#fff;padding:2rem}
     .hero-title{font-size:4rem;font-weight:700;color:#d4af37;text-shadow:2px 2px 4px rgba(0,0,0,.8);margin:0}
     .navbar{position:fixed;top:0;width:100%;background:rgba(0,0,0,.95);z-index:1000;padding:1rem 2rem}
@@ -224,10 +234,12 @@
   </nav>
 
   <!-- ============================================
-       HERO SECTION - FULL HEIGHT
+       HERO SECTION - FULL HEIGHT (img for LCP priority)
        ============================================ -->
   <section class="hero">
-    <div class="hero-background"></div>
+    <div class="hero-background">
+      <img class="hero-bg-img" src="images/hero-image.webp" alt="" fetchpriority="high" decoding="async" width="1920" height="1080">
+    </div>
     <div class="hero-content">
       <h1 class="hero-title">Top Dogg<br>Liquors</h1>
       <p class="hero-subtitle">Premium Liquor Store in Clarksville</p>
@@ -254,7 +266,7 @@
         <a href="wine-shop-clarksville.html" class="collection-card fade-in-on-scroll stagger-1">
             <picture>
               <source srcset="images/red-wine-collection.webp" type="image/webp">
-              <img src="images/red-wine-collection.png" alt="Premium wine collection at Top Dogg Liquors in Clarksville, TN" loading="lazy">
+              <img src="images/red-wine-collection.png" alt="Premium wine collection at Top Dogg Liquors in Clarksville, TN" width="400" height="250" loading="lazy" decoding="async">
             </picture>
           <div class="collection-overlay">
             <h3 class="collection-title">Wine Collection</h3>
@@ -265,7 +277,7 @@
         <a href="spirit-shop-clarksville.html" class="collection-card fade-in-on-scroll stagger-2">
             <picture>
               <source srcset="images/whiskey-collection.webp" type="image/webp">
-              <img src="images/whiskey-collection.png" alt="Premium spirits collection including whiskey, vodka, and rum at Top Dogg Liquors Clarksville" loading="lazy">
+              <img src="images/whiskey-collection.png" alt="Premium spirits collection including whiskey, vodka, and rum at Top Dogg Liquors Clarksville" width="400" height="250" loading="lazy" decoding="async">
             </picture>
           <div class="collection-overlay">
             <h3 class="collection-title">Spirits Collection</h3>
@@ -276,7 +288,7 @@
         <a href="beer-shop-clarksville.html" class="collection-card fade-in-on-scroll stagger-3">
             <picture>
               <source srcset="images/craft-beer-collection.webp" type="image/webp">
-              <img src="images/craft-beer-collection.png" alt="Craft beer and cider selection at Top Dogg Liquors in Clarksville, TN" loading="lazy">
+              <img src="images/craft-beer-collection.png" alt="Craft beer and cider selection at Top Dogg Liquors in Clarksville, TN" width="400" height="250" loading="lazy" decoding="async">
             </picture>
           <div class="collection-overlay">
             <h3 class="collection-title">Craft Beer & Cider</h3>
@@ -342,7 +354,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/red-wine-bottle.webp" type="image/webp">
-              <img src="images/red-wine-bottle.png" alt="Premium red wine selection at liquor store Clarksville TN" loading="lazy">
+              <img src="images/red-wine-bottle.png" alt="Premium red wine selection at liquor store Clarksville TN" width="400" height="400" loading="lazy" decoding="async">
             </picture>
             <div class="product-overlay">
               <a href="liquor-collections.html" class="btn-inquire">View Collection</a>
@@ -361,7 +373,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/white-wine-bottle.webp" type="image/webp">
-              <img src="images/white-wine-bottle.png" alt="Fine white wine collection at Top Dogg Liquors Clarksville" loading="lazy">
+              <img src="images/white-wine-bottle.png" alt="Fine white wine collection at Top Dogg Liquors Clarksville" width="400" height="400" loading="lazy" decoding="async">
             </picture>
             <div class="product-overlay">
               <a href="wine-shop-clarksville.html" class="btn-inquire">Shop Premium White Wine</a>
@@ -380,7 +392,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/whiskey-bottles.webp" type="image/webp">
-              <img src="images/whiskey-bottles.png" alt="Tennessee whiskey and premium spirits at liquor store Clarksville TN" loading="lazy">
+              <img src="images/whiskey-bottles.png" alt="Tennessee whiskey and premium spirits at liquor store Clarksville TN" width="400" height="400" loading="lazy" decoding="async">
             </picture>
             <div class="product-overlay">
               <a href="spirit-shop-clarksville.html" class="btn-inquire">Shop Tennessee Whiskey</a>
@@ -399,7 +411,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/beer-selection.webp" type="image/webp">
-              <img src="images/beer-selection.png" alt="Craft beer selection at Top Dogg Liquors Clarksville TN" loading="lazy">
+              <img src="images/beer-selection.png" alt="Craft beer selection at Top Dogg Liquors Clarksville TN" width="400" height="400" loading="lazy" decoding="async">
             </picture>
             <div class="product-overlay">
               <a href="beer-shop-clarksville.html" class="btn-inquire">Shop Craft Beer Selection</a>
@@ -418,7 +430,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/vodka-bottle.webp" type="image/webp">
-              <img src="images/vodka-bottle.png" alt="Premium vodka collection at wine shop Clarksville TN" loading="lazy">
+              <img src="images/vodka-bottle.png" alt="Premium vodka collection at wine shop Clarksville TN" width="400" height="400" loading="lazy" decoding="async">
             </picture>
             <div class="product-overlay">
               <a href="spirit-shop-clarksville.html" class="btn-inquire">Shop Premium Vodka</a>
@@ -437,7 +449,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/sparkling-wine-bottle.webp" type="image/webp">
-              <img src="images/sparkling-wine-bottle.png" alt="Premium sparkling wine and champagne at wine shop Clarksville TN" loading="lazy">
+              <img src="images/sparkling-wine-bottle.png" alt="Premium sparkling wine and champagne at wine shop Clarksville TN" width="400" height="400" loading="lazy" decoding="async">
             </picture>
             <div class="product-overlay">
               <a href="wine-shop-clarksville.html" class="btn-inquire">Shop Sparkling Wine</a>
@@ -470,7 +482,7 @@
         <!-- DoorDash Card -->
         <div class="fade-in-on-scroll" style="background: white; border-radius: 16px; padding: 3rem; box-shadow: var(--shadow-lg); text-align: center; transition: transform var(--transition-normal), box-shadow var(--transition-normal);">
           <div style="margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center; min-height: 80px;">
-            <img src="images/Doordash-logo.svg" alt="DoorDash alcohol delivery - Order liquor from Top Dogg Liquors Clarksville TN" style="max-width: 200px; height: auto; object-fit: contain;">
+            <img src="images/Doordash-logo.svg" alt="DoorDash alcohol delivery - Order liquor from Top Dogg Liquors Clarksville TN" width="200" height="80" style="max-width: 200px; height: auto; object-fit: contain;" decoding="async" loading="lazy">
           </div>
           <h3 style="color: var(--primary-navy); margin-bottom: 1rem; font-size: 1.75rem; font-family: var(--font-display);">Order on DoorDash</h3>
           <p style="color: var(--text-medium); margin-bottom: 1.5rem; line-height: 1.6;">Fast delivery from your favorite liquor store in Clarksville. Track your order in real-time.</p>
@@ -499,7 +511,7 @@
         <!-- Uber Eats Card -->
         <div class="fade-in-on-scroll" style="background: white; border-radius: 16px; padding: 3rem; box-shadow: var(--shadow-lg); text-align: center; transition: transform var(--transition-normal), box-shadow var(--transition-normal);">
           <div style="margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center; min-height: 80px;">
-            <img src="images/Uber-eats-logo.svg" alt="Uber Eats alcohol delivery - Order wine and spirits from Top Dogg Liquors Clarksville" style="max-width: 200px; height: auto; object-fit: contain;">
+            <img src="images/Uber-eats-logo.svg" alt="Uber Eats alcohol delivery - Order wine and spirits from Top Dogg Liquors Clarksville" width="200" height="80" style="max-width: 200px; height: auto; object-fit: contain;" decoding="async" loading="lazy">
           </div>
           <h3 style="color: var(--primary-navy); margin-bottom: 1rem; font-size: 1.75rem; font-family: var(--font-display);">Order on Uber Eats</h3>
           <p style="color: var(--text-medium); margin-bottom: 1.5rem; line-height: 1.6;">Reliable alcohol delivery service to Clarksville homes with live order tracking.</p>
@@ -670,7 +682,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/cognac-brandy.webp" type="image/webp">
-              <img src="images/cognac-brandy.png" alt="Premium Cognac and Brandy collection at Top Dogg Liquors Clarksville TN">
+              <img src="images/cognac-brandy.png" alt="Premium Cognac and Brandy collection at Top Dogg Liquors Clarksville TN" width="400" height="400" loading="lazy" decoding="async">
             </picture>
           </div>
         </div>
@@ -678,7 +690,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/craft-beer-collection.webp" type="image/webp">
-              <img src="images/craft-beer-collection.png" alt="Craft beer and local brewery selection at Top Dogg Liquors Clarksville">
+              <img src="images/craft-beer-collection.png" alt="Craft beer and local brewery selection at Top Dogg Liquors Clarksville" width="400" height="400" loading="lazy" decoding="async">
             </picture>
           </div>
         </div>
@@ -686,7 +698,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/dessert-fortified-wine.webp" type="image/webp">
-              <img src="images/dessert-fortified-wine.png" alt="Dessert wine and fortified wine selection - Port, Sherry, Madeira at Top Dogg Liquors">
+              <img src="images/dessert-fortified-wine.png" alt="Dessert wine and fortified wine selection - Port, Sherry, Madeira at Top Dogg Liquors" width="400" height="400" loading="lazy" decoding="async">
             </picture>
           </div>
         </div>
@@ -694,7 +706,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/whiskey-collection.webp" type="image/webp">
-              <img src="images/whiskey-collection.png" alt="Bourbon and whiskey collection - Jack Daniels, Jim Beam, Makers Mark at Top Dogg Liquors Clarksville">
+              <img src="images/whiskey-collection.png" alt="Bourbon and whiskey collection - Jack Daniels, Jim Beam, Makers Mark at Top Dogg Liquors Clarksville" width="400" height="400" loading="lazy" decoding="async">
             </picture>
           </div>
         </div>
@@ -702,7 +714,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/whiskey.webp" type="image/webp">
-              <img src="images/whiskey.png" alt="Premium whiskey and bourbon bottles - Tennessee whiskey selection Clarksville TN">
+              <img src="images/whiskey.png" alt="Premium whiskey and bourbon bottles - Tennessee whiskey selection Clarksville TN" width="400" height="400" loading="lazy" decoding="async">
             </picture>
           </div>
         </div>
@@ -710,7 +722,7 @@
           <div class="product-image">
             <picture>
               <source srcset="images/rum-collection.webp" type="image/webp">
-              <img src="images/rum-collection.png" alt="Premium rum collection - Bacardi, Captain Morgan, spiced rum at Top Dogg Liquors">
+              <img src="images/rum-collection.png" alt="Premium rum collection - Bacardi, Captain Morgan, spiced rum at Top Dogg Liquors" width="400" height="400" loading="lazy" decoding="async">
             </picture>
           </div>
         </div>
@@ -761,6 +773,7 @@
             <li><a href="services.html">Services</a></li>
             <li><a href="delivery.html">Delivery</a></li>
             <li><a href="liquor-collections.html">Collections</a></li>
+            <li><a href="liquor-store-clarksville.html">Liquor Store Clarksville</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="spirit-shop-clarksville.html">Spirits</a></li>
@@ -823,22 +836,18 @@
   <script src="js/animations.js" defer></script>
   <script src="js/main.js" defer></script>
   
-  <!-- Google Tag Manager (Moved to bottom for performance) -->
+  <!-- GTM & Analytics deferred until after load (reduces long tasks, improves LCP) -->
   <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KQSV7HSF');
-  </script>
-  
-  <!-- Google Analytics (Moved to bottom for performance) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B98WVWXTFD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-B98WVWXTFD');
+  window.addEventListener('load', function() {
+    var w=window,d=document,s='script',l='dataLayer',i='GTM-KQSV7HSF';
+    w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);
+    w.dataLayer=w.dataLayer||[];function gtag(){w.dataLayer.push(arguments);}
+    var ga=d.createElement(s);ga.async=true;ga.src='https://www.googletagmanager.com/gtag/js?id=G-B98WVWXTFD';
+    ga.onload=function(){gtag('js',new Date());gtag('config','G-B98WVWXTFD');};
+    d.head.appendChild(ga);
+  });
   </script>
 </body>
 </html>

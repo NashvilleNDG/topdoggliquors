@@ -59,8 +59,8 @@
 
 /* ============================================
    TYPOGRAPHY - PREMIUM FONTS
+   Loaded async in HTML for performance (no render-blocking @import)
    ============================================ */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600;700&family=Cinzel:wght@400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -1020,6 +1020,18 @@ a {
   background-repeat: no-repeat;
   opacity: 0.6;
   z-index: 1;
+  animation: heroFadeIn 1.5s ease-out;
+  filter: brightness(0.85) contrast(1.1);
+}
+
+/* Homepage hero uses img for LCP - no duplicate background */
+.hero-background:has(.hero-bg-img) {
+  background-image: none;
+  animation: none;
+  filter: none;
+  opacity: 1;
+}
+.hero-background .hero-bg-img {
   animation: heroFadeIn 1.5s ease-out;
   filter: brightness(0.85) contrast(1.1);
 }
