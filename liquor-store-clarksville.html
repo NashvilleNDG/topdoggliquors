@@ -63,7 +63,52 @@
     .liquor-store-section .section-title { color: #1a1a1a; }
     .liquor-store-section .section-subtitle { color: #444; }
     .liquor-store-cta .btn-primary { background: linear-gradient(135deg, #c9a84c 0%, #d4af37 100%); color: #1a1a1a; }
+    /* FAQ section on this page */
+    .liquor-store-faq .section-title { color: #1a1a1a; }
+    .liquor-store-faq .section-subtitle { color: #444; }
+    .liquor-store-faq .faq-item { margin-bottom: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; }
+    .liquor-store-faq .faq-question { width: 100%; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; text-align: left; background: white; border: none; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+    .liquor-store-faq .faq-question:hover { background: #f0eeea; }
+    .liquor-store-faq .faq-question.active { background: #f0eeea; }
+    .liquor-store-faq .faq-question h4 { margin: 0; font-size: 1.1rem; color: #1a1a1a; font-weight: 600; line-height: 1.4; }
+    .liquor-store-faq .faq-icon { font-size: 1.5rem; color: #c9a84c; flex-shrink: 0; transition: transform 0.2s; }
+    .liquor-store-faq .faq-question.active .faq-icon { transform: rotate(45deg); }
+    .liquor-store-faq .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .liquor-store-faq .faq-answer.active { max-height: 800px; }
+    .liquor-store-faq .faq-answer p { padding: 0 1.5rem 1.25rem; margin: 0 0 0.75rem; color: #333; line-height: 1.7; }
+    .liquor-store-faq .faq-answer p:last-child { margin-bottom: 0; }
+    .liquor-store-faq .faq-answer a { color: #b8860b; text-decoration: underline; }
+    .liquor-store-faq .faq-answer a:hover { color: #1a1a1a; }
   </style>
+  <!-- FAQ Schema for liquor store Clarksville page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which is the best liquor store in Clarksville?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Top Dogg Liquors is your premier liquor store in Clarksville, TN at 2896 Wilma Rudolph Blvd, Clarksville, TN 37040, with free parking and a curated selection of spirits, wine, and craft beer." }
+      },
+      {
+        "@type": "Question",
+        "name": "What are your store hours?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Monday-Thursday 9:00 AM – 9:50 PM; Friday-Saturday 9:00 AM – 10:50 PM; Sunday 10:00 AM – 9:50 PM." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer delivery?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. We partner with DoorDash and Uber Eats for alcohol delivery in Clarksville. See our delivery page for details." }
+      },
+      {
+        "@type": "Question",
+        "name": "What services do you offer?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Expert recommendations, gift and party planning, special orders, wide selection of spirits wine and craft beer, and delivery via DoorDash and Uber Eats. See our services page for more." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -393,6 +438,59 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+  <section class="section liquor-store-faq" id="faq" style="background: #F8F6F0;">
+    <div class="container">
+      <div class="section-header fade-in-on-scroll">
+        <div class="section-decoration"></div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Common questions about Top Dogg Liquors in Clarksville</p>
+      </div>
+      <div class="faq-container" style="max-width: 900px; margin: 2rem auto 0;">
+        <div class="faq-item fade-in-on-scroll">
+          <button type="button" class="faq-question">
+            <h4>Which is the best liquor store in Clarksville?</h4>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Top Dogg Liquors is your premier liquor store in Clarksville, TN. We're located at <strong>2896 Wilma Rudolph Blvd, Clarksville, TN 37040</strong>, with free parking and easy access for customers from Fort Campbell, downtown Clarksville, and Montgomery County. We offer a curated selection of spirits, wine, and craft beer with expert, friendly service.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in-on-scroll">
+          <button type="button" class="faq-question">
+            <h4>What are your store hours?</h4>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We're open daily. <strong>Monday–Thursday:</strong> 9:00 AM – 9:50 PM. <strong>Friday–Saturday:</strong> 9:00 AM – 10:50 PM. <strong>Sunday:</strong> 10:00 AM – 9:50 PM. Stop by or call <a href="tel:9313787061">(931) 378-7061</a> to confirm.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in-on-scroll">
+          <button type="button" class="faq-question">
+            <h4>Do you offer delivery?</h4>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. We partner with <strong>DoorDash</strong> and <strong>Uber Eats</strong> for fast alcohol delivery to your door in Clarksville. For delivery areas, timing, and how to order, see our <a href="delivery.html">delivery page</a>.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in-on-scroll">
+          <button type="button" class="faq-question">
+            <h4>What services do you offer?</h4>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We offer expert recommendations, gift and party planning help, special orders, and a wide selection of spirits, wine, and craft beer. We also provide <a href="delivery.html">delivery</a> via DoorDash and Uber Eats. Learn more on our <a href="services.html">services</a> page.</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-cta" style="text-align: center; margin-top: 3rem;">
+        <p style="font-size: 1.125rem; color: #333; margin-bottom: 1rem;">Still have questions?</p>
+        <a href="contact.html" class="btn-primary" style="display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #c9a84c 0%, #d4af37 100%); color: #1a1a1a; text-decoration: none; font-weight: 600; border-radius: 6px;">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Information -->
   <section class="section contact-info-section" style="background: var(--cream);">
     <div class="container">
@@ -541,5 +639,24 @@
   <script src="js/age-verification.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var faqQuestions = document.querySelectorAll('.liquor-store-faq .faq-question');
+      faqQuestions.forEach(function(question) {
+        question.addEventListener('click', function() {
+          var answer = this.nextElementSibling;
+          var isActive = this.classList.contains('active');
+          faqQuestions.forEach(function(q) {
+            q.classList.remove('active');
+            if (q.nextElementSibling) q.nextElementSibling.classList.remove('active');
+          });
+          if (!isActive) {
+            this.classList.add('active');
+            if (answer) answer.classList.add('active');
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
