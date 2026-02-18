@@ -673,7 +673,7 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: transparent;
+  background: var(--primary-navy);
   backdrop-filter: none;
   box-shadow: none;
   transition: all var(--transition-normal);
@@ -1113,6 +1113,11 @@ a {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   animation: bounce 2s infinite;
+}
+
+/* About page hero: clear fixed navbar so heading doesn't touch nav */
+.about-hero {
+  margin-top: 90px;
 }
 
 .scroll-indicator::after {
