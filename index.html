@@ -162,6 +162,21 @@
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://topdoggliquors.com/">
+  <style>
+    .home-faq .section-title { color: var(--primary-navy); }
+    .home-faq .section-subtitle { color: var(--text-medium); }
+    .home-faq .faq-item { margin-bottom: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; }
+    .home-faq .faq-question { width: 100%; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; text-align: left; background: white; border: none; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+    .home-faq .faq-question:hover { background: #f5f4f0; }
+    .home-faq .faq-question.active { background: #f5f4f0; }
+    .home-faq .faq-question h4 { margin: 0; font-size: 1.1rem; color: var(--primary-navy); font-weight: 600; line-height: 1.4; }
+    .home-faq .faq-icon { font-size: 1.5rem; color: var(--primary-gold); flex-shrink: 0; transition: transform 0.2s; }
+    .home-faq .faq-question.active .faq-icon { transform: rotate(45deg); }
+    .home-faq .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .home-faq .faq-answer.active { max-height: 800px; }
+    .home-faq .faq-answer p { padding: 0 1.5rem 1.25rem; margin: 0 0 0.75rem; color: var(--text-dark); line-height: 1.7; }
+    .home-faq .faq-answer a { color: #b8860b; text-decoration: underline; }
+  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -750,6 +765,70 @@
   </section>
 
   <!-- ============================================
+       FAQ
+       ============================================ -->
+  <section class="section home-faq" id="faq" style="background: #F8F6F0;">
+    <div class="container">
+      <div class="section-header fade-in-on-scroll">
+        <div class="section-decoration"></div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Quick answers about Top Dogg Liquors</p>
+      </div>
+      <div class="faq-container" style="max-width: 900px; margin: 2rem auto 0;">
+        <div class="faq-item fade-in-on-scroll">
+          <button type="button" class="faq-question">
+            <h4>Where is Top Dogg Liquors Located?</h4>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We're at 2896 Wilma Rudolph Blvd, Clarksville, TN 37040—your go-to <a href="liquor-store-clarksville.html">Clarksville liquor store</a> with free parking and easy access.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in-on-scroll">
+          <button type="button" class="faq-question">
+            <h4>Why choose Top Dogg Liquors?</h4>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We're the <a href="best-clarksville-liquor-store.html">best Clarksville liquor store</a>—large selection of spirits, wine, and craft beer, expert staff, and delivery.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in-on-scroll">
+          <button type="button" class="faq-question">
+            <h4>Do you deliver?</h4>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes—order via DoorDash and Uber Eats for delivery in Clarksville.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in-on-scroll">
+          <button type="button" class="faq-question">
+            <h4>What are your hours?</h4>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Mon–Thu 9 AM–9:50 PM; Fri–Sat 9 AM–10:50 PM; Sun 10 AM–9:50 PM.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in-on-scroll">
+          <button type="button" class="faq-question">
+            <h4>What do you carry—wine, spirits, and beer?</h4>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. We carry premium spirits, fine wines, and craft beer. Browse our <a href="liquor-collections.html">Collections</a> for wine, spirits, and beer.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="font-size: 1.125rem; color: var(--text-dark); margin-bottom: 1rem;">Still have questions?</p>
+        <a href="contact.html" class="btn-primary" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--primary-gold); color: #1a1a1a; text-decoration: none; font-weight: 600; border-radius: 6px;">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        FOOTER
        ============================================ -->
   <footer class="footer">
@@ -841,6 +920,19 @@
     ga.onload=function(){gtag('js',new Date());gtag('config','G-B98WVWXTFD');};
     d.head.appendChild(ga);
   });
+  </script>
+  <script>
+  (function(){
+    var q = document.querySelectorAll('.home-faq .faq-question');
+    q.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var ans = this.nextElementSibling;
+        var on = this.classList.contains('active');
+        q.forEach(function(b){ b.classList.remove('active'); if(b.nextElementSibling) b.nextElementSibling.classList.remove('active'); });
+        if(!on){ this.classList.add('active'); if(ans) ans.classList.add('active'); }
+      });
+    });
+  })();
   </script>
 </body>
 </html>

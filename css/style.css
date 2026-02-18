@@ -1481,6 +1481,7 @@ a {
   color: var(--primary-navy);
   margin-bottom: var(--spacing-sm);
   white-space: nowrap;
+  text-align: center;
 }
 
 /* Allow wrapping on mobile for readability */
@@ -1494,6 +1495,12 @@ a {
 .feature-description {
   color: var(--text-medium);
   line-height: 1.7;
+  text-align: center;
+}
+
+.why-choose-us .feature-card .feature-title,
+.why-choose-us .feature-card .feature-description {
+  text-align: center;
 }
 
 /* ============================================
