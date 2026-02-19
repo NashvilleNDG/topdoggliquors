@@ -1449,6 +1449,23 @@ a {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* Services page: equal-height cards and aligned description text */
+.services-grid .feature-card {
+  display: flex;
+  flex-direction: column;
+}
+.services-grid .feature-card .feature-icon {
+  flex-shrink: 0;
+}
+.services-grid .feature-card .feature-title {
+  white-space: normal;
+  flex-shrink: 0;
+}
+.services-grid .feature-card .feature-description {
+  flex: 1;
+  text-align: center;
+}
+
 .feature-card {
   text-align: center;
   padding: var(--spacing-lg);
