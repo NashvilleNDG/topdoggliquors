@@ -362,16 +362,32 @@
     
     @media (max-width: 768px) {
       .delivery-hero {
-        padding: 100px 0 60px;
+        padding: 100px 1.25rem 60px 1.25rem;
+        padding-top: 120px;
         min-height: 500px;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+      }
+      
+      .delivery-hero .container {
+        padding: 2.5rem 1.25rem 1rem;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
       }
       
       .delivery-hero h1 {
-        font-size: 3.5rem;
+        font-size: 2rem;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
       }
       
       .delivery-hero p {
         font-size: 1.1rem;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
       }
       
       .delivery-platforms {

@@ -269,22 +269,41 @@
     font-size: 0.8125rem;
   }
   
-  /* Hero */
+  /* Hero - prevent title cut at top: start content from top of hero on mobile */
   .hero {
     min-height: 500px;
     padding: var(--spacing-md);
-    margin-top: 100px; /* Account for fixed navbar on mobile (45px logo + 32px padding) + extra spacing for better visual separation */
+    margin-top: 100px !important; /* Account for fixed navbar on mobile (45px logo + 32px padding) + extra spacing for better visual separation */
     box-sizing: border-box;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding-top: 2.5rem !important;
+  }
+  
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 1rem;
   }
   
   .hero-title {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-sm);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   
   .hero-subtitle {
     font-size: 1rem;
     margin-bottom: var(--spacing-lg);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   
   .hero-cta {
@@ -481,6 +500,9 @@
     width: 100% !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding-top: 1.5rem !important;
   }
   
   .spirits-hero .hero-background,
@@ -500,9 +522,28 @@
   .beer-hero .hero-content {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: var(--spacing-sm) !important;
-    padding-right: var(--spacing-sm) !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 1rem !important;
     box-sizing: border-box !important;
+  }
+  
+  .spirits-hero .hero-title,
+  .wine-hero .hero-title,
+  .beer-hero .hero-title {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    font-size: 1.75rem !important;
+  }
+  
+  .spirits-hero .hero-subtitle,
+  .wine-hero .hero-subtitle,
+  .beer-hero .hero-subtitle {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
   }
   
   /* Section padding adjustments */
